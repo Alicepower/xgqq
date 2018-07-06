@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+
+    <link rel="stylesheet" href="css/idangerous.swiper2.7.6.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/lunbostyle.css">
+    <script type="text/javascript" src="js/logins.js"></script>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/idangerous.swiper2.7.6.min.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script type="text/template" id="letterreport">
+        {{if result}}
+        {{each result as value i}}
+        <a  target="_blank" href="{{value.pcUrL}}">点击查看小狗钱钱信披报告</a>
+
+        {{/each}}
+        {{/if}}
+    </script>
+    <script>
+
+        $(function () {
+            $(".navtab .tab a").mouseover(function () {
+                $(this).addClass('on').siblings().removeClass('on');
+                var index = $(this).index();
+                number = index;
+                $('.navtab .content li').hide();
+                $('.navtab .content li:eq(' + index + ')').show();
+            });
+            var auto = 1;
+            if (auto == 1) {
+                var number = 0;
+                var maxNumber = $('.navtab .tab a').length;
+
+                function autotab() {
+                    number++;
+                    number == maxNumber ? number = 0 : number;
+                    $('.navtab .tab a:eq(' + number + ')').addClass('on').siblings().removeClass('on');
+                    $('.navtab .content ul li:eq(' + number + ')').show().siblings().hide();
+                }
+
+                var tabChange = setInterval(autotab, 3000);
+                //鼠标悬停暂停切换
+                $('.navtab').mouseover(function () {
+                    clearInterval(tabChange);
+                });
+                $('.navtab').mouseout(function () {
+                    tabChange = setInterval(autotab, 3000);
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="tool">
+    <div class="w100 wrap">
+
+        <span class="l">服务热线：
+
+                       		400-166-2616&nbsp;&nbsp;&nbsp;
+
+                       		021-63280006&nbsp;&nbsp;&nbsp;
+
+					</span>
+        <span class="l s-split">|&nbsp;&nbsp;</span>
+        <span class="l">关注我们：</span>
+
+
+        <div class="l" id="gzwm">
+
+						<span class="wx">
+
+							<div class="wx-content pos" style="display: none">
+								<div class="pos-top"></div>
+								<p style="color: #1e93ff;  font-size: 12px;">扫描关注微信公众号</p>
+								<p><img src="image/gongzhonghao.jpg" alt="" width="100" height="100"></p>
+							</div>
+						</span>
+            <a href="#" class="xl" rel="nofollow" target="_blank">
+                <div class="xl-content pos" style="display:none;">
+                    <div class="pos-top"></div>
+                    <p style="color: #1e93ff;  font-size: 12px;">点击关注小狗钱钱微博：</p>
+                    <p style="color: #1e93ff;  font-size: 12px;">@小狗钱钱</p>
+                </div>
+            </a>
+            <a href="#" class="tx" rel="nofollow" target="_blank">
+                <div class="tx-content pos" style="display:none;">
+                    <div class="pos-top"></div>
+                    <p style="color: #1e93ff;  font-size: 12px; ">小狗钱钱官方QQ群：</p>
+                    <p style="color: #1e93ff;  font-size: 12px;">小狗钱钱官方理财交流</p>
+                </div>
+            </a>
+        </div>
+
+        <ul class="userInfo">
+
+            <li>
+                <a href="/register"><span>注册</span></a>
+            </li>
+            <li>
+                <a class="g-login-btn" href="/login"><span>登录</span></a>
+            </li>
+
+            <li>
+                <a href="/help/fuwu/"><span>帮助</span></a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<!--nav切换部分-->
+
+<div>
+    <div class="box">
+        <ul class="navqie">
+            <!-- <li>
+                 <h1 class="fix">
+                     <a href=""><img src="image/logo%20(1).png" alt="" style="display: inline-block"></a>
+                     <a href=""><img src="image/slogon.gif" alt="" style="display: inline-block"></a>
+                 </h1>
+
+             </li>-->
+            <li class="current" style="margin-left: 200px"><a href="">首页</a></li>
+            <li><a href="">我要出借</a></li>
+            <li><a href="">梦想储蓄罐</a></li>
+            <li><a href="">积分商城</a></li>
+            <li><a href="">排榜大厅</a></li>
+            <li><a href="">安全保障</a></li>
+            <li><a href="">信息披露</a></li>
+            <li><a href="">新手入门</a></li>
+            <li><a href="">关于我们</a></li>
+        </ul>
+
+    </div>
+    <!--默认轮播图-->
+
+    <div class="divcon">
+        <ul class="contentqie">
+            <li class="show">
+                <div class="swiper-container">
+                    <a class="arrow-left" href="#"></a>
+                    <a class="arrow-right" href="#"></a>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide1">
+                            <a href="#" class="inner">
+                                <img src="image/01.png" class="ani img s0" swiper-animate-effect="zoomInDown"
+                                     swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+                                <img src="image/03.png" class="ani img s1" swiper-animate-effect="bounceInLeft"
+                                     swiper-animate-duration="1s" swiper-animate-delay="0s">
+                                <img src="image/05.png" class="ani img s2" swiper-animate-effect="flipInY"
+                                     swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                                <img src="image/s3.png" class="ani img s3" swiper-animate-effect="fadeInUp"
+                                     swiper-animate-duration="2s" swiper-animate-delay=".2s">
+                                <img src="image/s4.png" class="ani img s4" swiper-animate-effect="fadeInUp"
+                                     swiper-animate-duration="2.5s" swiper-animate-delay="0s">
+                            </a>
+                        </div>
+                        <div class="swiper-slide slide2">
+                            <a href="#" class="inner">
+                                <img src="image/b1.png" class="ani img zh-a-1" swiper-animate-effect="bounceInDown"
+                                     swiper-animate-duration="2s" swiper-animate-delay="0.5s">
+                                <img src="image/btttt.png" class="ani img zh-a-2" swiper-animate-effect="zoomIn"
+                                     swiper-animate-duration="2s" swiper-animate-delay="0s">
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide slide2">
+                            <a href="#" class="inner">
+                                <img src="image/b1.png" class="ani img zh-a-1" swiper-animate-effect="bounceInDown"
+                                     swiper-animate-duration="2s" swiper-animate-delay="0.5s">
+                                <img src="image/btttt.png" class="ani img zh-a-2" swiper-animate-effect="zoomIn"
+                                     swiper-animate-duration="2s" swiper-animate-delay="0s">
+                            </a>
+                        </div>
+                        <div class="swiper-slide slide3">
+                            <div class="inner">
+                                <img src="image/bttt.png" class="ani img b-1" swiper-animate-effect="bounceInLeft"
+                                     swiper-animate-duration="1.5s" swiper-animate-delay="0s"/>
+                                <img src="image/b-2.png" class="ani img b-2" swiper-animate-effect="bounceInRight"
+                                     swiper-animate-duration="1.5s" swiper-animate-delay="0s"/>
+                                <img src="image/b3.png" class="ani img b-3" swiper-animate-effect="fadeInDown"
+                                     swiper-animate-duration="1.5s" swiper-animate-delay="0s"/>
+                                <img src="image/b-s.png" class="ani img b-s-1" swiper-animate-effect="zoomInDown"
+                                     swiper-animate-duration="1.2s" swiper-animate-delay="0s"/>
+                                <img src="image/b-s.png" class="ani img b-s-2" swiper-animate-effect="zoomInDown"
+                                     swiper-animate-duration="1.2s" swiper-animate-delay="0s"/>
+                                <img src="image/b-s.png" class="ani img b-s-3" swiper-animate-effect="zoomInDown"
+                                     swiper-animate-duration="1.2s" swiper-animate-delay="0.6s"/>
+                                <img src="image/b-s.png" class="ani img b-s-4" swiper-animate-effect="zoomInDown"
+                                     swiper-animate-duration="1.2s" swiper-animate-delay="0.8s"/>
+                                <img src="image/b-s.png" class="ani img b-s-5" swiper-animate-effect="zoomInDown"
+                                     swiper-animate-duration="1.2s" swiper-animate-delay="1.5s"/>
+                                <img src="image/b-s.png" class="ani img b-s-6" swiper-animate-effect="zoomInDown"
+                                     swiper-animate-duration="1.2s" swiper-animate-delay=".5s"/>
+                                <img src="image/b-y-1.png" class="ani img b-y-1 loop" swiper-animate-effect="moveRight"
+                                     swiper-animate-duration="15s" swiper-animate-delay="4s"/>
+                                <img src="image/b-y-2.png" class="ani img b-y-2 loop" swiper-animate-effect="moveLeft"
+                                     swiper-animate-duration="15s" swiper-animate-delay="0s"/>
+                                <img src="image/b-y-3.png" class="ani img b-y-3 loop" swiper-animate-effect="moveRight"
+                                     swiper-animate-duration="15s" swiper-animate-delay="0s"/>
+                                <div class="targetBtn clearfix ani" swiper-animate-effect="zoomInUp"
+                                     swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                                    <a class="a1" href="#" target="_blank">欢迎光临</a>
+                                    <a class="a1" href="#" style="" rel="media-gallery">了解更多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination"></div>
+                    <!--轮播结束部分-->
+                </div>
+
+                <!--文字轮播部分-->
+
+                <div>
+                    <ul style="margin-top: 20px;margin-right: 50px;" class="horn">
+                        <li>&nbsp;&nbsp;<img src="image/horn.png" alt="" style="margin-left: 160px"></li>
+                        <li>关于积分商城实物商品停止发货的公告</li>
+                        <li>|&nbsp;&nbsp;【紧急通知】关于债券接口调整的公告</li>
+                        <li>| &nbsp;&nbsp;银行存管系统支付渠道切换通知</li>
+                        <li style="margin-left: 100px">更多>></li>
+                    </ul>
+                </div>
+
+
+                <div class="centers">
+                    <div>
+                        <ul class="ul-left">
+                            <li class="li-left">
+                                <img src="image/anbz.png" alt="" class="ims">
+                                <span class="li-right">
+             <h2>国有控股，实力雄厚</h2>
+            <p>全民所有制企业100%控股</p>
+            <p>800万元战略投资，中庸经贸，保驾护航</p>
+        </span></li>
+
+                            <li class="li-left">
+                                <img src="image/cdsy.png" alt="" class="ims">
+                                <span class="li-right">
+             <h2>多重风控，保障安全</h2>
+            <p> 江西银行直接存管</p>
+            <p> 中审亚太会计师事务所审计合作</p>
+        </span></li>
+                            <li class="li-left">
+                                <img src="image/gykg.png" alt="" class="ims">
+                                <span class="li-right">
+             <h2>收益稳健，超低风险</h2>
+            <p>  收益理想，风险超低</p>
+            <p>投资期限灵活,长短期结合更省心</p>
+        </span></li>
+                        </ul>
+
+                    </div>
+
+                    <!--</div>-->
+                    <hr style="height:1px;border:none;border-top:1px solid #efefef;width: 100%"/>
+                    <div>
+                        <ul class="line">
+                            <li><img src="image/platform_data.png" alt="" style="overflow: hidden">平台数据</li>
+                            <li>平台成交额 <span style="font-size: 30px;color: #1e93ff;font-weight: bold">174363</span>万元
+                            </li>
+                            <li>为用户赚取 <span style="font-size: 30px;color: #1e93ff;font-weight: bold">500000</span></li>
+                            <li>注册用户数 <span style="font-size: 30px;color: #1e93ff;font-weight: bold">33000</span>万元</li>
+                        </ul>
+                    </div>
+                    <div class="vip"><img src="image/VIP-banner.png" alt="" style="margin-top: 30px"></div>
+                </div>
+
+
+                <div>
+                    <div style="border: 1px solid #EFEFEF;width: 1100px;height: 180px;margin-top: 260px;margin-left: 450px">
+                        <ul class="you">
+                            <li style="float: left;padding: 10px">钱钱赚723号21期</li>
+                            <li style="float: right;margin-left: 600px;padding: 10px">每日万元收益，<span style="color: red">2.19~3.47</span>每日加息，存取灵活
+                            </li>
+                        </ul>
+                        <div style="width: 1100px;height: 2px;background: #EFEFEF;"></div>
+
+                        <div>
+
+                            <ul class="youtwo">
+                                <li>
+                                    <p style="font-size: 18px;font-weight: bolder;color: #ff4c5d">12.0%~18.00%</p>
+                                    <span style="font-size: 14px;
+    color: #888;"> 往期年化收益率</span>
+                                </li>
+                                <li><p style="color: #0e2642;font-size: 18px">17天~15天</p>
+                                    <span style="font-size: 14px;
+    color: #888;">投资期限</span>
+                                </li>
+                                <li><p style="color: #0e2642;font-size: 18px">50.00元</p>
+                                    <span style="font-size: 14px;
+    color: #888;">起投金额</span>
+                                </li>
+
+                                <li>
+                                    <div style="width: 100px;
+    height: 6px;background: -webkit-linear-gradient(left, #24e9f0 , #2564ef);margin-bottom: 20px"></div>
+                                    <span style="font-size: 14px;
+    color: #888;">投标进度79.3%</span>
+                                </li>
+                                <li>
+                                    <button class="btn">立即体验</button>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <div style="border: 1px solid #EFEFEF;width: 1100px;height: 180px;margin-top: 50px;margin-left: 450px">
+                        <ul class="you">
+                            <li style="float: left;padding: 10px">180天梦想储蓄罐</li>
+                            <li style="float: right;margin-left: 600px;padding: 10px;">投资当日起息，<span style="color: red">按天复利</span>懒人无忧，存取灵活
+                            </li>
+                        </ul>
+                        <div style="width: 1100px;height: 2px;background: #EFEFEF;"></div>
+
+                        <div>
+
+                            <ul class="youtwo">
+                                <li>
+                                    <p style="font-size: 18px;font-weight: bolder;color: #ff4c5d">12.0%~18.00%</p>
+                                    <span style="font-size: 14px;
+    color: #888;"> 参考年化收益率</span>
+                                </li>
+                                <li><p style="color: #0e2642;font-size: 18px">180天</p>
+                                    <span style="font-size: 14px;
+    color: #888;">锁定期</span>
+                                </li>
+                                <li><p style="color: #0e2642;font-size: 18px">1000.00元</p>
+                                    <span style="font-size: 14px;
+    color: #888;">起投金额</span>
+                                </li>
+
+                                <li>
+                                    <p style="color: #0e2642;font-size: 18px">7892000.00元</p>
+                                    <span style="font-size: 14px;
+    color: #888;">可投余额</span>
+                                </li>
+                                <li>
+                                    <button class="btn">立即投资</button>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--钱钱商票-->
+                <div style="border: 2px solid #EFEFEF;width: 1100px;height: 431px;margin-top: 50px;margin-left: 450px">
+                    <img src="image/qqshangpiao.png" alt="" style="float: left;display: inline-block">
+                    <ul style="float: left" class="shangpiao">
+
+                        <li><p style="display: inline-block;color: #0e2642;font-size: 18px">4599号1期</p></li>
+                        <li>
+                            <p style="font-size: 18px;font-weight: bolder;color: #ff4c5d">12.0%</p>
+                            <span style="font-size: 14px;color: #888;"> 参考年化收益率</span>
+                        </li>
+                        <li><p style="color: #0e2642;font-size: 18px">180天</p>
+                            <span style="font-size: 14px;color: #888;">锁定期</span>
+                        </li>
+                        <li><p style="color: #0e2642;font-size: 18px">1000.00元</p>
+                            <span style="font-size: 14px;  color: #888;">起投金额</span>
+                        </li>
+
+                        <li>
+                            <p style="color: #0e2642;font-size: 18px">7892000.00元</p>
+                            <span style="font-size: 14px;
+    color: #888;">可投余额</span>
+                        </li>
+                        <li>
+                            <button class="btn01">立即投资</button>
+                        </li>
+                    </ul>
+                    <ul style="float: left" class="shangpiao">
+
+                        <li><p style="display: inline-block;color: #0e2642;font-size: 18px">4599号1期</p></li>
+                        <li>
+                            <p style="font-size: 18px;font-weight: bolder;color: #ff4c5d">12.0%</p>
+                            <span style="font-size: 14px;
+    color: #888;"> 参考年化收益率</span>
+                        </li>
+                        <li><p style="color: #0e2642;font-size: 18px">180天</p>
+                            <span style="font-size: 14px;
+    color: #888;">锁定期</span>
+                        </li>
+                        <li><p style="color: #0e2642;font-size: 18px">1000.00元</p>
+                            <span style="font-size: 14px;
+    color: #888;">起投金额</span>
+                        </li>
+
+                        <li>
+                            <p style="color: #0e2642;font-size: 18px">7892000.00元</p>
+                            <span style="font-size: 14px;
+    color: #888;">可投余额</span>
+                        </li>
+                        <li>
+                            <button class="btn01">立即投资</button>
+                        </li>
+                    </ul>
+
+
+                    <ul style="float: left" class="shangpiao">
+
+                        <li><p style="display: inline-block;color: #0e2642;font-size: 18px">4599号1期</p></li>
+                        <li>
+                            <p style="font-size: 18px;font-weight: bolder;color: #ff4c5d">12.0%</p>
+                            <span style="font-size: 14px;
+    color: #888;"> 参考年化收益率</span>
+                        </li>
+                        <li><p style="color: #0e2642;font-size: 18px">180天</p>
+                            <span style="font-size: 14px;
+    color: #888;">锁定期</span>
+                        </li>
+                        <li><p style="color: #0e2642;font-size: 18px">1000.00元</p>
+                            <span style="font-size: 14px;
+    color: #888;">起投金额</span>
+                        </li>
+
+                        <li>
+                            <p style="color: #0e2642;font-size: 18px">7892000.00元</p>
+                            <span style="font-size: 14px;
+    color: #888;">可投余额</span>
+                        </li>
+                        <li>
+                            <button class="btn01">立即投资</button>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!--新手入门-->
+                <div style="border: 2px solid #EFEFEF;width: 1100px;height: 140px;margin-top: 50px;margin-left: 450px">
+                    <div>
+                        <ul class="xgqq">
+                            <li class="la">
+                                <a href="" style="text-decoration: none">
+                                    <h3 style="color: black;font-size: 16px;margin-top: 10px">新手入门</h3>
+                                    <p style="color: black;font-size: 16px;margin-top: 10px">一分钟了解小狗钱钱</p>
+                                </a>
+                            </li>
+                            <li class="lb"><a href="">
+                                <h3 style="color: black;font-size: 16px;margin-top: 10px;margin-top: 10px">邀请好友</h3>
+                                <p style="color: black;font-size: 16px;margin-top: 10px;margin-top: 10px">邀好友，拿返现</p>
+                            </a></li>
+                            <li class="lc"><a href="">
+                                <h3 style="color: black;font-size: 16px;margin-top: 10px">积分商城</h3>
+                                <p style="color: black;font-size: 16px;margin-top: 10px">礼品兑换 生活缴费</p>
+                            </a></li>
+                            <li class="ld"><a href="">
+                                <h3 style="color: black;font-size: 16px;margin-top: 10px">运营月报</h3>
+                                <p style="color: black;font-size: 16px;margin-top: 10px">平台信息披露</p>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div style="border: 2px solid #EFEFEF;width: 1100px;height: 140px;margin-top: 20px;margin-left: 450px">
+                    <div style="font-size: 30px;text-align: center">合作伙伴</div>
+
+                    <div class="divspan">
+                        <a href=""><span style=""><img src="image/shzx.png" alt=""></span></a>
+                        <a href=""> <span><img src="image/shzx.png" alt=""></span></a>
+                        <a href=""><span style=""><img src="image/shzx.png" alt=""></span></a>
+                        <a href=""> <span><img src="image/shzx.png" alt=""></span></a>
+                        <!--  <a href="">  <span><img src="image/shzx.png" alt=""></span></a>
+                          <a href=""> <span><img src="image/zxyh.png" alt=""></span></a>-->
+
+
+                    </div>
+                </div>
+
+                <div style="margin-top: 500px;background: red"></div>
+            </li>
+            <li>
+
+
+                <div class="inverstbanner"></div>
+
+
+                <div class="brow" style="margin-left: 300px;">
+                    <h2>180天梦想储蓄罐</h2>
+                    <ul class="dream">
+                        <li>
+                            <p style="color: #ff4c5d;font-size: 18px;">10.0%+0.3% </p>
+                            <p class="co">参考年化</p>
+
+                        </li>
+                        <li>
+                            <p>180天</p>
+                            <p class="co">锁定期</p>
+
+                        </li>
+                        <li>
+                            <button class="btn">立即出借</button>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="brow">
+                    <h2>120天梦想储蓄罐</h2>
+                    <ul class="dream">
+                        <li>
+                            <p style="color: #ff4c5d;font-size: 18px;">10.0%+0.3%</p>
+                            <p class="co">参考年化</p>
+
+                        </li>
+                        <li>
+                            <p>180天</p>
+                            <p class="co">锁定期</p>
+
+                        </li>
+                        <li>
+                            <button class="btn">立即出借</button>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="brow">
+                    <h2>98天梦想储蓄罐</h2>
+                    <ul class="dream">
+                        <li>
+                            <p style="color: #ff4c5d;font-size: 18px;">10.0%+0.3%</p>
+                            <p class="co">参考年化</p>
+
+                        </li>
+                        <li>
+                            <p>180天</p>
+                            <p class="co">锁定期</p>
+
+                        </li>
+                        <li>
+                            <button class="btn">立即出借</button>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="brow">
+                    <h2>180天梦想储蓄罐</h2>
+                    <ul class="dream">
+                        <li>
+                            <p style="color: #ff4c5d;font-size: 18px;">10.0%+0.3%</p>
+                            <p class="co">参考年化</p>
+
+                        </li>
+                        <li>
+                            <p>180天</p>
+                            <p class="co">锁定期</p>
+
+                        </li>
+                        <li>
+                            <button class="btn">立即出借</button>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div style="background: #FFFFFF;height: 50px;line-height: 50px;margin-top: 380px;margin-left: 300px;margin-right: 300px;">
+                    <ul class="invest-item">
+                        <li>全部</li>
+                        <li>商票</li>
+                        <li>银票</li>
+                        <li>天天增</li>
+                        <li>钱钱赚</li>
+                        <li style="float: right;" id="paixu">综合排序<img src="image/xxiajt.png" alt=""/></li>
+                    </ul>
+                </div>
+
+                <div class="xiadiv" style="display: none;" id="xiadiv">
+                    <ul class="xxia">
+                        <li>高利率</li>
+                        <li>最大可投</li>
+                        <li>满标率</li>
+                        <li>长期限</li>
+                        <li>短期性</li>
+                    </ul>
+                </div>
+
+
+                <ul class="item">
+                    <li>项目名称</li>
+                    <li>参考年化收益率</li>
+                    <li>投资期限</li>
+                    <li>起投金额</li>
+                    <li>投标进度</li>
+                </ul>
+
+                <ul class="items">
+                    <li><img src="image/mengxiang.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                    <li class="reds"> 10.0%</li>
+                    <li>180天</li>
+                    <li>100000.元</li>
+                    <li>50000.0元</li>
+                    <!--  <li>
+                          <div class="Bar">
+                          <div style="width: 50%;">
+                              <span>50%</span>
+                          </div>
+                      </li>-->
+                    <li>
+                        <button class="btn">立即投资</button>
+                    </li>
+                </ul>
+
+                <ul class="items">
+                    <li><img src="image/mengxiang.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                    <li class="reds"> 10.0%</li>
+                    <li>180天</li>
+                    <li>100000.元</li>
+                    <li>50000.0元</li>
+                    <!-- <li><div class="Bar">
+                         <div style="width: 50%;">
+                             <span>50%</span>
+                         </div> </li>-->
+                    <li>
+                        <button class="btn">立即投资</button>
+                    </li>
+                </ul>
+
+                <ul class="items">
+                    <li><img src="image/mengxiangno.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                    <li class="reds"> 10.0%</li>
+                    <li>180天</li>
+                    <li>100000.元</li>
+                    <li>50000.0元</li>
+                    <!--  <li><div class="Bar">
+                          <div style="width: 50%;">
+                              <span>50%</span>
+                          </div> </li>-->
+                    <li>
+                        <button class="btn-gray">已抢光</button>
+                    </li>
+                </ul>
+                <ul class="items">
+                    <li><img src="image/mengxiang.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                    <li class="reds"> 10.0%</li>
+                    <li>180天</li>
+                    <li>100000.元</li>
+                    <li>50000.0元</li>
+                    <!--  <li><div class="Bar">
+                          <div style="width: 50%;">
+                              <span>50%</span>
+                          </div> </li>-->
+                    <li>
+                        <button class="btn">立即投资</button>
+                    </li>
+                </ul>
+
+                <ul class="items">
+                    <li><img src="image/mengxiangno.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                    <li class="reds"> 10.0%</li>
+                    <li>180天</li>
+                    <li>100000.元</li>
+                    <li>50000.0元</li>
+                    <!--<li><div class="Bar">-->
+                    <!--<div style="width: 50%;">-->
+                    <!--<span>50%</span>-->
+                    <!--</div> </li>-->
+                    <!--<li>-->
+                    <button class="btn-gray">已抢光</button>
+                    </li>
+                </ul>
+
+                <div style="margin-left: 300px;">
+                    <img src="image/soldout.png" alt=""/>
+                </div>
+
+
+                <ul class="items">
+                    <li><img src="image/newno.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                    <li class="reds"> 10.0%</li>
+                    <li>180天</li>
+                    <li>100000.元</li>
+                    <li>50000.0元</li>
+                    <!--<li><div class="Bar">-->
+                    <!--<div style="width: 50%;">-->
+                    <!--<span>50%</span>-->
+                    <!--</div> </li>-->
+                    <!--<li>-->
+                    <button class="btn-gray">已抢光</button>
+                    </li>
+                </ul>
+
+                <ul class="items">
+                    <li><img src="image/mengxiangno.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                    <li class="reds"> 10.0%</li>
+                    <li>180天</li>
+                    <li>100000.元</li>
+                    <li>50000.0元</li>
+                    <!--<li><div class="Bar">-->
+                    <!--<div style="width: 50%;">-->
+                    <!--<span>50%</span>-->
+                    <!--</div> </li>-->
+                    <!--<li>-->
+                    <button class="btn-gray">已抢光</button>
+                    </li>
+
+                </ul>
+
+            </li>
+            <li>
+                <div style="background: #EFEFEF;">
+
+
+                    <!--<a href="">梦想储蓄罐</a>--->
+                    <img src="image/configmx.png" alt="" class="banner" style="width: 100% ;margin:  0 auto; max-width: 100%;
+    height: auto;">
+
+
+                    <ul class="item">
+                        <li>项目名称</li>
+                        <li>参考年化</li>
+                        <li>锁定期</li>
+                        <li>起投金额</li>
+                        <li>可投金额</li>
+                    </ul>
+
+
+                    <ul class="items">
+                        <li><img src="image/mengxiang.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+
+                        <li class="reds"> 10.0% +0.3% <img src="image/tqjx.png" alt=""/></li>
+                        <li>180天</li>
+                        <li>100000.元</li>
+                        <li>50000.0元</li>
+
+                        <li>
+                            <button class="btn">立即投资</button>
+                        </li>
+                        <div style="margin-left: 70%;margin-top: -40px;margin-bottom: 40px;"><span
+                                style="color: #1E93FF;">623人次</span>已投<span style="color: #1E93FF;">100万</span>元
+                        </div>
+                    </ul>
+
+
+                    <ul class="items">
+                        <li><img src="image/mengxiang.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                        <li class="reds"> 10.0% <img src="image/tqjx.png" alt=""/></li>
+                        <li>180天</li>
+                        <li>100000.元</li>
+                        <li>50000.0元</li>
+
+                        <li>
+                            <button class="btn">立即投资</button>
+                        </li>
+                        <div style="margin-left: 70%;margin-top: -40px;margin-bottom: 40px;"><span
+                                style="color: #1E93FF;">623人次</span>已投<span style="color: #1E93FF;">100万</span>元
+                        </div>
+                    </ul>
+
+                    <ul class="items">
+                        <li><img src="image/mengxiangno.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                        <li class="reds"> 10.0% <img src="image/tqjx.png" alt=""/></li>
+                        <li>180天</li>
+                        <li>100000.元</li>
+                        <li>50000.0元</li>
+
+                        <li>
+                            <button class="btn-gray">已抢光</button>
+                        </li>
+                        <div style="margin-left: 70%;margin-top: -40px;margin-bottom: 40px;"><span
+                                style="color: #1E93FF;">623人次</span>已投<span style="color: #1E93FF;">100万</span>元
+                        </div>
+                    </ul>
+                    <ul class="items">
+                        <li><img src="image/mengxiang.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                        <li class="reds"> 10.0% <img src="image/tqjx.png" alt=""/></li>
+                        <li>180天</li>
+                        <li>100000.元</li>
+                        <li>50000.0元</li>
+
+                        <li>
+                            <button class="btn">立即投资</button>
+                        </li>
+                        <div style="margin-left: 70%;margin-top: -30px;margin-bottom: 40px;"><span
+                                style="color: #1E93FF;">623人次</span>已投<span style="color: #1E93FF;">100万</span>元
+                        </div>
+                    </ul>
+
+                    <ul class="items">
+                        <li><img src="image/mengxiangno.png" alt="" style="margin-right: 20px;">180天梦想储蓄罐</li>
+                        <li class="reds"> 10.0% <img src="image/tqjx.png" alt=""/></li>
+                        <li>180天</li>
+                        <li>100000.元</li>
+                        <li>50000.0元</li>
+
+                        <li>
+                            <button class="btn-gray">已抢光</button>
+                        </li>
+                        <div style="margin-left: 70%;margin-top: -30px;margin-bottom: 40px;"><span
+                                style="color: #1E93FF;">623人次</span>已投<span style="color: #1E93FF;">100万</span>元
+                        </div>
+                    </ul>
+
+
+                </div>
+            </li>
+            <li>
+                <!--    <a href="">积分商城</a>-->
+                <img src="image/jifen-ba.jpg" alt="" class="banner"
+                     style=" max-width: 100%;height: auto;width: 100% ;margin-top: -20px;">
+                <div>
+                    <div style="display: inline-block">
+
+                        <div class="d1">
+                            <a href="">
+                                <img src="image/jifen3.jpg" alt="">
+                                <p class="re">手机话费充值</p>
+                            </a>
+                        </div>
+
+                        <div class="d2">
+                            <a href="">
+                                <img src="image/jifen.jpg" alt="">
+                                <p class="xiaomi">小米手环2</p>
+                                <p class="xiaomis">22350积分</p>
+                            </a>
+                        </div>
+
+
+                        <div class="d3">
+                            <a href="">
+                                <img src="image/images.png" alt="">
+                                <p class="xiaomi">苹果IPad mini 4</p>
+                                <p class="xiaomis">493200积分</p>
+                            </a>
+                        </div>
+
+
+                        <div class="d4">
+                            <a href="">
+                                <img src="image/images.jpg" alt="">
+                                <p class="xiaomi">IPhone 7 128G</p>
+                                <p class="xiaomis">928200积分</p>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div style="margin-left: 400px;margin-right: 160px">
+                    <div><img src="image/hbg.png" alt="" style="margin-top: 80px;">&nbsp;&nbsp;<span>商品大全</span>
+                    </div>
+                    <div style="border: 1px solid #efefef;height: 110px;margin-top: 10px">
+
+                        <ul class="pro">
+                            <li>商品分类:</li>
+                            <li>全部商品</li>
+                            <li>精品卡券</li>
+                            <li>实物商品</li>
+                        </ul>
+                        <hr style=" height:1px;border:none;border-top:1px dashed #efefef;">
+                        <div>
+
+
+                            <ul class="pro-left">
+                                <li>积分筛选:</li>
+                                <li>我能兑换</li>
+                                <li>从小到大</li>
+                                <li>从大到小</li>
+                            </ul>
+                            <ul class="pro-right">
+                                <li style="margin-left: 300px">积分:</li>
+                                <li><input type="text" value="积分初始值" style="padding: 5px"></li>
+                                <li><input type="text" value="积分结束值" style="padding: 5px"></li>
+                                <li>
+                                    <button style="border: 1px solid #efefef;border-radius: 5px;color: black;background: white;padding: 5px;">
+                                        确定
+                                    </button>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--商品展示内容-->
+
+                <div>
+
+
+                    <div style="display: inline-block;margin-left: 400px ;border: 1px solid #e0e0e0;margin-top: 25px">
+                        <img src="image/002.jpg" alt="">
+                        <p style="margin-left: 100px"> 【小狗钱钱】</p>
+                        <p style="margin-left: 110px;color: blue;margin-top: 10px"> 4050积分</p>
+                        <div class="button-small"><a href="/front/account/IntegralMall/exchange?id=110">立即兑换</a></div>
+
+                    </div>
+                    <div style="display: inline-block;margin-left: 20px ;border: 1px solid #e0e0e0;margin-top: 25px">
+                        <img src="image/005.jpg" alt="">
+                        <p style="margin-left: 100px"> 【通向财富自由之路】</p>
+                        <p style="margin-left: 110px;color: blue;margin-top: 10px"> 4050积分</p>
+                        <div class="button-small"><a href="#">立即兑换</a></div>
+
+                    </div>
+                    <div style="display: inline-block;margin-left: 20px ;border: 1px solid #e0e0e0;margin-top: 25px">
+                        <img src="image/003.jpg" alt="">
+                        <p style="margin-left: 100px"> 【小狗钱钱】</p>
+                        <p style="margin-left: 110px;color: blue;margin-top: 10px"> 4050积分</p>
+                        <div class="button-small"><a href="/front/account/IntegralMall/exchange?id=110">立即兑换</a></div>
+                    </div>
+                    <div style="display: inline-block;margin-left: 20px ;border: 1px solid #e0e0e0;margin-top: 25px">
+                        <img src="image/003.jpg" alt="">
+                        <p style="margin-left: 100px"> 【小狗钱钱】</p>
+                        <p style="margin-left: 110px;color: blue;margin-top: 10px"> 4050积分</p>
+                        <div class="button-small"><a href="/front/account/IntegralMall/exchange?id=110">立即兑换</a></div>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+
+                    <div style="display: inline-block;margin-left: 400px ;border: 1px solid #e0e0e0;margin-top: 25px">
+                        <img src="image/002.jpg" alt="">
+                        <p style="margin-left: 100px"> 【小狗钱钱】</p>
+                        <p style="margin-left: 110px;color: blue;margin-top: 10px"> 4050积分</p>
+                        <div class="button-small"><a href="/front/account/IntegralMall/exchange?id=110">立即兑换</a></div>
+
+                    </div>
+                    <div style="display: inline-block;margin-left: 20px ;border: 1px solid #e0e0e0;margin-top: 25px">
+                        <img src="image/imagesxian.png" alt="">
+                        <p style="margin-left: 100px"> 【通向财富自由之路】</p>
+                        <p style="margin-left: 110px;color: blue;margin-top: 10px"> 4050积分</p>
+                        <div class="button-small"><a href="#">立即兑换</a></div>
+
+                    </div>
+                    <div style="display: inline-block;margin-left: 20px ;border: 1px solid #e0e0e0;margin-top: 25px">
+                        <img src="image/imagese.png" alt="">
+                        <p style="margin-left: 100px"> 【小狗钱钱】</p>
+                        <p style="margin-left: 110px;color: blue;margin-top: 10px"> 4050积分</p>
+                        <div class="button-small"><a href="/front/account/IntegralMall/exchange?id=110">立即兑换</a></div>
+                    </div>
+                    <div style="display: inline-block;margin-left: 20px ;border: 1px solid #e0e0e0;margin-top: 25px">
+                        <img src="image/imagejing.jpg" alt="">
+                        <p style="margin-left: 100px"> 【小狗钱钱】</p>
+                        <p style="margin-left: 110px;color: blue;margin-top: 10px"> 4050积分</p>
+                        <div class="button-small"><a href="/front/account/IntegralMall/exchange?id=110">立即兑换</a></div>
+
+                    </div>
+
+
+                    <div>
+
+                        <ul class="page">
+                            <li><p>上一页</p></li>
+                            <li><p>1</p></li>
+                            <li><p>2</p></li>
+                            <li><p>3</p></li>
+                            <li><p>4</p></li>
+                            <li><p>下一页</p></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!--许愿树-->
+                <div style="margin-left: 400px">
+
+                    <div><img src="image/hbg.png" alt="" style="margin-top: 80px;">&nbsp;&nbsp;<span>许愿树</span>
+                    </div>
+                    <div>
+
+                        <ul class="shu">
+                            <li>
+                                <img src="image/shu.png" alt="">
+
+                            </li>
+
+                            <li style="margin-left: 100px">
+                                商品名称: <input type="text" class="name"> <br>
+                                推荐理由: <textarea name="" id="" cols="30" rows="10" class="reson"></textarea>
+                                <p style="font-size:12px;color:#999999;line-height:37px;text-align:right;margin-right: 2px">
+                                    可输入<span class="num" style="color:#ff4000;">85</span>字</p><br>
+
+                                <div>
+
+                                    <button class="btn002">请先登录</button>
+                                    <br>
+                                    <p style="font-size:14px;color:#999999;line-height:37px;text-align:center;">
+                                        已有575人许愿</p>
+                                </div>
+
+                                <div class="explain">
+                                    <dl>
+                                        <dt>许愿说明：</dt>
+                                        <dd>1、诚邀您向我们推荐您想要的商品，并提供详细的推荐理由；</dd>
+                                        <dd>2、小狗钱钱将采购上架许愿数量较高的商品，感谢您的支持！</dd>
+                                    </dl>
+                                </div>
+                            </li>
+
+
+                        </ul>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </li>
+            <li>
+                <!--  <a href="">排榜大厅</a>-->
+                <img src="image/bannerbg.png" alt="" class="banner" style=" max-width: 100%;width: 100% ;">
+
+                <div>
+                    <div style="height: 60px;background: #EFEFEF;margin-right: 480px;width: 100%;">
+
+                        <span class="qq">钱钱王者榜</span>
+                        <span class="qq">钱钱人气榜</span>
+                    </div>
+
+                    <div>
+
+                        <div style="width: 520px;height: 270px;background: #EFEFEF;margin-left: 320px;display: inline-block;margin-top: 20px">
+
+                            <h3 class="shuoming">玩法说明</h3>
+                            <div style="display: inline-block" class="jieshi">
+                                凡注册用户，当月累计投资收益金额前10名（排榜收益金额=新手标预期收益+商票预期收益+钱钱赚锁定期收益+梦想储蓄罐锁定期的收益）
+                            </div>
+
+                            <div><a href="" class="goin">请登录</a></div>
+                        </div>
+
+                        <div style="width: 500px;height: 270px;background: #EFEFEF;margin-left: 80px;display: inline-block;margin-top: 20px">
+
+                            <h3 class="shuoming">玩法说明</h3>
+                            <div style="display: inline-block" class="jieshi">
+                                凡注册用户，当月累计投资收益金额前10名（排榜收益金额=新手标预期收益+商票预期收益+钱钱赚锁定期收益+梦想储蓄罐锁定期的收益）
+                            </div>
+                            <a href="" class="goin">去投资</a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div>
+                </div>
+
+
+                <div style="margin-left: 300px;margin-top: 20px">
+                    <div id="append"></div>
+                </div>
+
+
+                <div style="margin-left: 350px;margin-top: 20px">
+
+                    排行说明：累计上一个自然月内每日用户收益总和前十名即为打榜成功，每月1日排行榜结算后统一发放至用户账户。
+
+                </div>
+                <div style="width: 100%;height: 300px;background: #EFEFEF;margin-top: 30px;">
+
+
+                    <div style="margin-left: 300px"><h3 class="jingtitle">精选标的</h3></div>
+                    <div class="dd02" style="display: inline-block;margin-left: 260px">
+                        <ul class="bids">
+                            <span style="margin-left: 60px;margin-top: 20px;display: inline-block">钱钱商票428号17期</span><br>
+                            <li style="display: inline-block;margin-left:80px;text-align: center;margin-top:30px">
+                                <span style="color: red">9.6%</span><br>
+                                <span style="font-size: 14px">年化收益</span>
+                            </li>
+                            <li style="display: inline-block;margin-left: 20px;text-align: center;margin-top: 40px">
+                                <span>67天</span><br>
+                                <span style="font-size: 14px">投资期限</span>
+                            </li>
+                        </ul>
+                        <p style=" height: 40px;margin-top:80px;horiz-align: center;text-align: center;line-height: 40px "
+                           class="ppp">立即投资</p>
+
+                    </div>
+
+
+                    <div class="dd02" style="display: inline-block;margin-left: 50px">
+                        <ul class="bids">
+                            <span style="margin-left: 60px;margin-top: 20px;display: inline-block">钱钱商票428号17期</span><br>
+                            <li style="display: inline-block;margin-left:80px;text-align: center;margin-top:30px">
+                                <span style="color: red">9.6%</span><br>
+                                <span style="font-size: 14px">年化收益</span>
+                            </li>
+                            <li style="display: inline-block;margin-left: 20px;text-align: center;margin-top: 40px">
+                                <span>67天</span><br>
+                                <span style="font-size: 14px">投资期限</span>
+                            </li>
+                        </ul>
+                        <p style=" height: 40px;margin-top:80px;horiz-align: center;text-align: center;line-height: 40px "
+                           class="ppp">立即投资</p>
+
+                    </div>
+
+                    <div class="dd02" style="display: inline-block;margin-left: 50px">
+                        <ul class="bids">
+                            <span style="margin-left: 60px;margin-top: 20px;display: inline-block">钱钱商票428号17期</span><br>
+                            <li style="display: inline-block;margin-left:80px;text-align: center;margin-top:30px">
+                                <span style="color: red">9.6%</span><br>
+                                <span style="font-size: 14px">年化收益</span>
+                            </li>
+                            <li style="display: inline-block;margin-left: 20px;text-align: center;margin-top: 40px">
+                                <span>67天</span><br>
+                                <span style="font-size: 14px">投资期限</span>
+                            </li>
+                        </ul>
+                        <p style=" height: 40px;margin-top:80px;horiz-align: center;text-align: center;line-height: 40px "
+                           class="ppp">立即投资</p>
+
+                    </div>
+
+                    <div class="dd02" style="display: inline-block;margin-left: 50px">
+                        <ul class="bids">
+                            <span style="margin-left: 60px;margin-top: 20px;display: inline-block">钱钱商票428号17期</span><br>
+                            <li style="display: inline-block;margin-left:80px;text-align: center;margin-top:30px">
+                                <span style="color: red">9.6%</span><br>
+                                <span style="font-size: 14px">年化收益</span>
+                            </li>
+                            <li style="display: inline-block;margin-left: 20px;text-align: center;margin-top: 40px">
+                                <span>67天</span><br>
+                                <span style="font-size: 14px">投资期限</span>
+                            </li>
+                        </ul>
+                        <p style=" height: 40px;margin-top:80px;horiz-align: center;text-align: center;line-height: 40px "
+                           class="ppp">立即投资</p>
+
+                    </div>
+
+
+                </div>
+
+
+            </li>
+            <li>
+                <!--       <a href="">安全保障</a>-->
+                <div class="safe">
+                    <img src="image/banner (1).png" alt="" style="width: 100% ;margin:  0 auto;text-align: center">
+                    <img src="image/cg_01.png" alt="" style="width: 100% ;margin:  0 auto">
+                    <img src="image/sj.png" alt="" style="width: 100% ;margin:  0 auto">
+
+                    <img src="image/gy.png" alt="" style="width: 100% ;margin:  0 auto">
+                    <img src="image/fk.png" alt="" style="width: 100% ;margin:  0 auto;background-color: purple">
+                    <img src="image/js.png" alt="" style="width: 100% ;margin:  0 auto">
+
+
+                </div>
+
+
+            </li>
+            <li>
+
+                <!-- <a href="">信息披露</a>-->
+                <div class="safe">
+                    <div class="infoshow">
+                        <div class="informationwarpper w1100" id="tab-bar">
+
+                            <a href="javascript:;" class="active"><span class="menulist0"></span>运营数据</a>
+
+                            <a href="javascript:;" class=""><span class="menulist1"></span>银行存管</a>
+
+                            <a href="javascript:;"><span class="menulist2"></span>多重保障</a>
+
+                            <a href="javascript:;"><span class="menulist3"></span>风险控制</a>
+
+                            <a href="javascript:;"><span class="menulist4"></span>组织信息</a>
+
+                            <a href="javascript:;"><span class="menulist5"></span>审计信息</a>
+
+                            <a href="javascript:;"><span class="menulist6"></span>监管法则</a>
+
+                            <a href="javascript:;"><span class="menulist7"></span>联系我们</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="wrapp">
+                    <div class="informationtitle"><b>平台运营数据</b><span></span></div>
+
+                    <div class="operational" id="operations">
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor1" style="background: rgb(248, 138, 113);">累计注册人数</div>
+                            <p>202,319</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor2" style="background: rgb(248, 182, 72);">累计借款人数</div>
+                            <p>203</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor3" style="background: rgb(248, 138, 113);">当前出借人数</div>
+                            <p>4,140</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor4" style="background: rgb(0, 172, 238);">当前借款人数</div>
+                            <p>203</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor5" style="background: rgb(58, 199, 209);">累计撮合成交总金额</div>
+                            <p>2,192,367,557.2</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor6" style="background: rgb(186, 20, 63);">累计撮合成交笔数</div>
+                            <p>7,899</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor7" style="background: rgb(2, 171, 240);">每笔平均借款金额</div>
+                            <p>277,550.01</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor8" style="background: rgb(248, 138, 113);">每笔平均出借金额</div>
+                            <p>13,231.02</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor9" style="background: rgb(248, 182, 72);">待还借款总金额</div>
+                            <p>328,254,815.42</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor10" style="background: rgb(248, 138, 113);">待还借款笔数</div>
+                            <p>1,048</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor11" style="background: rgb(0, 172, 238);">待还借款每笔平均金额</div>
+                            <p>313,220.24</p>
+                        </div>
+
+                        <div class="databox">
+                            <div class="tit titlebkcolor12" style="background: rgb(58, 199, 209);">待还借款平均借款期限</div>
+                            <p>284.29</p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="presentation" id="letterreports">
+
+                        <a target="_blank" href="">点击查看小狗钱钱信披报告</a>
+
+                    </div>
+
+
+                    <div class="informationtitle"><b> 近6个月撮合成交数据</b><span></span></div>
+                    <div class="informationtitle"><b> 风险控制</b><span></span></div>
+
+                    <div class="management">
+
+                        <span><b>0</b>逾期笔数（笔）</span>
+
+                        <span><b>0</b>逾期金额（元）</span>
+
+                        <span><b>0</b>逾期90天以上笔数（笔）</span>
+
+                        <span><b>0</b>逾期90天以上金额（元）</span>
+
+                        <span><b>0</b>关联关系借款笔数（笔）</span>
+
+                        <span><b>0</b>关联关系借款余额（元）</span>
+
+                    </div>
+                    <div class="informationtitle"><b> 项目状况</b><span></span></div>
+                    <div class="informationtitle"><b> 用户数据</b><span></span></div>
+                    <div class="informationtitle"><b> 收费标准</b><span></span></div>
+<div class="chargestandard">
+    <div class="chargestitle ui-btn">
+        <span >业务类型</span>
+        <span class="l">收费标准</span>
+    </div>
+    <div id="chargestandards">
+
+
+        <div class="chargescontent">
+            <span>用户注册</span>
+            <span class="l">免费</span>
+        </div>
+
+
+        <div class="chargescontent">
+            <span>开通存管账户</span>
+            <span class="l">免费</span>
+        </div>
+
+
+        <div class="chargescontent">
+            <span>充值</span>
+            <span class="l">免费</span>
+        </div>
+
+
+        <div class="chargescontent">
+            <span>出借投资</span>
+            <span class="l">免费</span>
+        </div>
+
+
+        <div class="chargescontent">
+            <span>债权转让</span>
+            <span class="l">免费</span>
+        </div>
+
+
+        <div class="chargescontent">
+            <span>提现</span>
+            <span class="l">免费</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+                    <div class="informationtitle"><b> 运营数据月报</b><span></span></div>
+
+                    <div>
+                        <div class="chargemenu" id="cpmenulist">
+                            <a href="javascript:;" class="active" style="background: rgb(248, 138, 113);">
+                                <span style="border-top-color: rgb(248, 138, 113);"></span> 2018</a>
+
+                            <a href="javascript:;" class="" style="background: rgb(248, 182, 72);">
+                                <span style="border-top-color: rgb(248, 138, 113);"></span> 2017</a>
+
+
+                        </div>
+
+                        <ul class="chargelist">
+                            <li><a target="_blank" href="模仿小狗钱钱登录注册界面.html"><span
+                                    style="background-color: rgb(248, 138, 113);">五月</span>运营数据月报</a></li>
+                            <li><a target="_blank" href="#"><span
+                                    style="background-color: rgb(248, 138, 113);">四月</span>运营数据月报</a></li>
+                            <li><a target="_blank" href="#"><span
+                                    style="background-color: rgb(248, 138, 113);">三月</span>运营数据月报</a></li>
+                            <li><a target="_blank" href="#"><span
+                                    style="background-color: rgb(248, 138, 113);">二月</span>运营数据月报</a></li>
+                            <li><a target="_blank" href="#"><span
+                                    style="background-color: rgb(248, 138, 113);">一月</span>运营数据月报</a></li>
+                        </ul>
+
+
+                        <div class="chargecontent" style="display: none;">
+                            <ul class="chargelist">
+                              <!--  <li><a class="yearlist" target="_blank" style="background-color: rgb(248, 138, 113);">2017年运营年报</a>
+                                </li>-->
+                                <li><a target="_blank"><span style="background-color: rgb(248, 182, 72);">十二月</span>运营数据月报</a>
+                                </li>
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">十一月</span>运营数据月报</a>
+
+                                </li>
+
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">十月</span>运营数据月报</a>
+
+                                </li>
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">九月</span>运营数据月报</a>
+                                </li>
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">八月</span>运营数据月报</a>
+                                </li>
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">七月</span>运营数据月报</a>
+
+                                </li>
+
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">六月</span>运营数据月报</a>
+
+                                </li>
+
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">五月</span>运营数据月报</a>
+                                </li>
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">四月</span>运营数据月报</a>
+
+                                </li>
+                                <li>
+                                    <a target="_blank"><span style="background-color: rgb(248, 182, 72);">三月</span>运营数据月报</a>
+
+                                </li>
+                                <li>
+                                    <a target="_blank" href="#"><span style="background-color: rgb(248, 182, 72);">二月</span>运营数据月报</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="#"><span style="background-color: rgb(248, 182, 72);">一月</span>运营数据月报</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="xpffotbg">
+                    <div class="letter w1100"><img src="image/letter.png"></div>
+                </div>
+
+
+            </li>
+            <li>
+
+                <div>
+                    <div class="banner-b"></div>
+                    <div class="btns" id="regist">
+                        <a href="login.html" class="ui-btn" target="_blank">立即注册</a>
+                    </div>
+
+                </div>
+
+
+
+                <div class="data">
+                    <div class="data-con w1100">
+                        <ul class="fix">
+                            <li>
+                                <p class="value">
+                                    <span id="nub1">1000 </span>万元
+                                </p>
+                                <p class="statr">平台交易额</p>
+                            </li>
+                            <li>
+                                <p class="value">
+                                    <span id="nub2">50000 </span>元
+                                </p>
+                                <p class="statr">为用户赚取收益</p>
+                            </li>
+                            <li>
+                                <p class="value">
+                                    <span id="nub3">100 </span>人
+                                </p>
+                                <p class="statr">注册用户数</p>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+            </li>
+            <li><a href="">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!--第三部分-->
+
+
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        pagination: '.pagination',
+        paginationClickable: true,
+        autoplay: 10000,
+        speed: 1,
+
+        //autoplayDisableOnInteraction : false,
+
+        onInit: function (swiper) { //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function (swiper) {
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        }
+    })
+
+    $('.arrow-left').on('click', function (e) {
+        e.preventDefault()
+        mySwiper.swipePrev()
+    })
+    $('.arrow-right').on('click', function (e) {
+        e.preventDefault()
+        mySwiper.swipeNext()
+    })
+</script>
+
+
+</body>
+</html>

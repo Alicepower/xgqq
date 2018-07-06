@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="keywords" content="登录 注册界面 ">
+    <meta name="description" content="琉璃子 模仿小狗钱钱网站部分界面">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "",helvetica,arial,sans-serif;
+
+        }
+        .login-res {
+            width: 280px;
+            height: 308px;
+            background: url("image/home-login-bgd.png") no-repeat 0 0;
+            background-color: white;
+            float: right;
+            margin-right: 300px;
+            margin-top: 5px;
+            border-radius: 3px;
+        }
+
+        .resli li {
+            list-style: none;
+        }
+
+        .phone {
+            width: 242px;
+            height: 37px;
+            margin-top: 50px;
+            font-size: 14px;
+            margin-left: 15px;
+            border: 1px solid #d4d4d4;
+            line-height: 35px;
+            text-indent: 10px;
+            vertical-align: middle;
+            border-radius: 5px;
+            color: #d4d4d4;
+
+        }
+
+        .yzm {
+            width: 122px;
+            height: 37px;
+            margin-top: 10px;
+            font-size: 14px;
+            border: 1px solid #d4d4d4;
+            line-height: 35px;
+            margin-left: 15px;
+            text-indent: 10px;
+            vertical-align: middle;
+            border-radius: 5px;
+            color: #d4d4d4;
+        }
+
+        .yzmimg {
+            width: 103px;
+            height: 35px;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: 15px;
+            line-height: 52px;
+        }
+
+        .msg {
+            background: #1e92ff;
+            cursor: pointer;
+            color: #fff;
+            width: 102px;
+            height: 37px;
+            vertical-align: middle;
+            margin-left: 10px;
+            margin-top: 15px;
+            font-size: 12px;
+            border: 1px solid #d4d4d4;
+            line-height: 35px;
+            border-radius: 5px;
+            color:white;
+        }
+
+        .loginpwd {
+            width: 242px;
+            height: 37px;
+            margin-top: 10px;
+            font-size: 14px;
+            border: 1px solid #d4d4d4;
+            line-height: 35px;
+            text-indent: 10px;
+            margin-left: 15px;
+            vertical-align: middle;
+            border-radius: 5px;
+            color: #d4d4d4;
+        }
+        .btn{
+            width: 260px;
+            color: #fff;
+            height: 45px;
+            border: 0;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 15px;
+            display: inline-block;
+            cursor: pointer;
+            box-sizing: border-box;
+            border-radius: 25px;
+            background: -webkit-linear-gradient(left, #24e9f0 , #2564ef);
+            background: -o-linear-gradient(right, #24e9f0 , #2564ef);
+            background: -moz-linear-gradient(right, #24e9f0 , #2564ef);
+            background: linear-gradient(to right, #24e9f0 , #2564ef);
+            /* box-shadow: 0 0.3rem 0.566666666666rem rgba(112,206,232,0.3); */
+            outline: none;
+            margin-left: 15px;
+        }
+        .bgs{
+            width: 1920px;
+            height: 320px;
+            background: url("image/hh.png");
+        }
+
+
+
+        .login {
+            width: 280px;
+            height: 310px;
+            background: url("image/home-login-bgz.png") no-repeat 0 0;
+            background-color: white;
+            margin-right: 300px;
+            margin-top: 5px;
+            border-radius: 3px;
+            margin-left: 50px;
+            display: inline-block;
+            float: right;
+        }
+
+        .login-phone {
+            width: 242px;
+            height: 37px;
+            margin-top: 105px;
+            font-size: 14px;
+            margin-left: 15px;
+            border: 1px solid #d4d4d4;
+            line-height: 35px;
+            text-indent: 10px;
+            vertical-align: middle;
+            border-radius: 5px;
+            color: #d4d4d4;
+
+        }
+
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#login-res").click(function(){
+                $(this).hide();
+            });
+            $("#login").click(function(){
+                $(this).show();
+            });
+
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+<div class="bgs">
+
+    <div class="login-res" id="login-res">
+        <ul class="resli">
+            <li><input type="text" placeholder="请输入手机号" class="phone"></li>
+            <li><input type="text" placeholder="图形验证码" class="yzm"><img src="image/captcha.png" alt="" class="yzmimg">
+            </li>
+            <li><input type="text" placeholder="短信验证码" class="yzm"><input type="button" value="获取短信验证码" class="msg">
+            </li>
+            <li><input type="text" placeholder="设置登录密码" class="loginpwd"></li>
+            <li><button class="btn">注册领800元红包</button></li>
+        </ul>
+
+    </div>
+
+
+    <div class="login" id="login">
+        <ul class="resli">
+            <li></span><input type="text" placeholder="请输入手机号" class="login-phone"></li>
+            <li><input type="text" placeholder="短信验证码" class="yzm"><input type="button" value="获取短信验证码" class="msg">
+            </li>
+            <li><input type="text" placeholder="请输入密码" class="loginpwd"></li>
+            <li><button class="btn">登录</button></li>
+        </ul>
+    </div>
+</div>
+
+
+
+</body>
+</html>
